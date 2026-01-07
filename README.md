@@ -8,9 +8,8 @@ This project contains THREE ways to run the image processing benchmarks:
 2. run_multiprocessing.py    - Runs ONLY multiprocessing benchmarks
 3. run_concurrent_futures.py - Runs ONLY concurrent.futures benchmarks
 
-================================================================================
+
 PREREQUISITES
-================================================================================
 
 1. Ensure you have Python 3.7+ installed
 2. Install required packages:
@@ -19,10 +18,8 @@ PREREQUISITES
 
 3. Place your input images (JPG format) in the ./input_images/ folder
 
-================================================================================
-OPTION 1: RUN BOTH PARADIGMS TOGETHER (Original)
-================================================================================
 
+OPTION 1: RUN BOTH PARADIGMS TOGETHER (Original)
 Command:
     python main.py
 
@@ -38,10 +35,8 @@ Output Files (in ./output_images/):
     - benchmark_results.json    : Structured data
     - performance.png           : Comparison charts
 
-================================================================================
-OPTION 2: RUN MULTIPROCESSING ONLY
-================================================================================
 
+OPTION 2: RUN MULTIPROCESSING ONLY
 Command:
     python run_multiprocessing.py
 
@@ -63,10 +58,8 @@ Key Features of Multiprocessing:
     - pool.starmap() for multiple arguments
     - pool.apply_async() with callbacks for pipelines
 
-================================================================================
-OPTION 3: RUN CONCURRENT.FUTURES ONLY
-================================================================================
 
+OPTION 3: RUN CONCURRENT.FUTURES ONLY
 Command:
     python run_concurrent_futures.py
 
@@ -89,10 +82,8 @@ Key Features of Concurrent.Futures:
     - as_completed() for handling results as they finish
     - Context manager support (with statement)
 
-================================================================================
-QUICK START EXAMPLES
-================================================================================
 
+QUICK START EXAMPLES
 # Run multiprocessing only:
 cd C:\Users\msuha\OneDrive\Desktop\CST435-Assignment-2-Editted
 python run_multiprocessing.py
@@ -105,10 +96,8 @@ python run_concurrent_futures.py
 cd C:\Users\msuha\OneDrive\Desktop\CST435-Assignment-2-Editted
 python main.py
 
-================================================================================
-COMPARISON: MULTIPROCESSING vs CONCURRENT.FUTURES
-================================================================================
 
+COMPARISON: MULTIPROCESSING vs CONCURRENT.FUTURES
 Feature                  | multiprocessing        | concurrent.futures
 -------------------------|------------------------|-------------------------
 API Level                | Lower-level            | Higher-level (Pythonic)
@@ -121,10 +110,8 @@ Completion Order         | Callbacks fire on done | as_completed() iterator
 Context Manager          | Supported              | Supported (recommended)
 Performance              | ~Same (both use pools) | ~Same (both use pools)
 
-================================================================================
-PARALLELIZATION STRATEGIES TESTED
-================================================================================
 
+PARALLELIZATION STRATEGIES TESTED
 1. PIXEL-LEVEL:
    - Divides each image into horizontal chunks (rows)
    - Each worker processes a portion of pixels
@@ -140,31 +127,8 @@ PARALLELIZATION STRATEGIES TESTED
    - Multiple images can be in different pipeline stages
    - Good for: Maximizing throughput, overlapping computation
 
-================================================================================
-EXPECTED OUTPUT STRUCTURE
-================================================================================
 
-After running, your output_images/ folder will contain:
-
-./output_images/
-├── output.jpg                          (processed image)
-├── benchmark_output.txt                (main.py log)
-├── benchmark_results.csv               (main.py results)
-├── benchmark_results.json              (main.py data)
-├── performance.png                     (main.py charts)
-├── benchmark_multiprocessing.txt       (multiprocessing log)
-├── benchmark_multiprocessing.csv       (multiprocessing results)
-├── benchmark_multiprocessing.json      (multiprocessing data)
-├── performance_multiprocessing.png     (multiprocessing charts)
-├── benchmark_concurrent_futures.txt    (futures log)
-├── benchmark_concurrent_futures.csv    (futures results)
-├── benchmark_concurrent_futures.json   (futures data)
-└── performance_concurrent_futures.png  (futures charts)
-
-================================================================================
 TROUBLESHOOTING
-================================================================================
-
 1. "No images found" error:
    - Ensure JPG images exist in ./input_images/ folder
    
@@ -178,4 +142,3 @@ TROUBLESHOOTING
    - Reduce number of images for testing
    - Check that images are reasonable size (not extremely large)
 
-================================================================================

@@ -1,6 +1,6 @@
-================================================================================
+
 HOW TO RUN THE IMAGE PROCESSING BENCHMARK PROGRAMS
-================================================================================
+
 
 This project contains THREE ways to run the image processing benchmarks:
 
